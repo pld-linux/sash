@@ -1,6 +1,6 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Summary(es):	Interpretador de Comandos conectado estáticamente con algunos comandos básicos
-Summary(pl):	Statycznie linkowana pow³oka z wbudowanymi podstawowymi poleceniami
+Summary(pl):	Skonsolidowana statycznie pow³oka z wbudowanymi podstawowymi poleceniami
 Summary(pt_BR):	nterpretador de Comandos ligado estaticamente com alguns comandos básicos
 Summary(ru):	óÔÁÔÉŞÅÓËÉ ÓÏÂÒÁÎÎÙÊ shell ÓÏ ×ÓÔÒÏÅÎÎÙÍÉ ÂÁÚÏ×ÙÍÉ ËÏÍÁÎÄÁÍÉ
 Summary(uk):	óÔÁÔÉŞÎÏ Ú¦ÂÒÁÎÉÊ shell ¦Ú ×ÂÕÄÏ×ÁÎÉÍÉ ÂÁÚÏ×ÉÍÉ ËÏÍÁÎÄÁÍÉ
@@ -34,16 +34,16 @@ y gzip. Sash puede ser útil en situaciones de recuperación del
 sistema.
 
 %description -l pl
-Sash jest prost±, samodzieln±, statycznie linkowan± pow³ok±, która ma
-wbudowane uproszczone wersje poleceñ takich jak ls, dd czy gzip. Sash
-jest statycznie zlinkowany, wiêc mo¿e pracowaæ bez bibliotek
-wspó³dzielonych, co jest przydatne do ratowania systemu po awarii.
-Sash mo¿e byæ tak¿e u¿ywany do bezpiecznego uaktualniania bibliotek
-dzielonych do nowszych wersji.
+Sash jest prost±, samodzieln±, skonsolidowan± statycznie pow³ok±,
+która ma wbudowane uproszczone wersje poleceñ takich jak ls, dd czy
+gzip. Ze wzglêdu na statyczn± konsolidacjê Sash mo¿e pracowaæ bez
+bibliotek wspó³dzielonych, co jest przydatne do ratowania systemu po
+awarii. Sash mo¿e byæ tak¿e u¿ywany do bezpiecznego uaktualniania
+bibliotek dzielonych do nowszych wersji.
 
 %description -l pt_BR
-O sash é um interpretador de comandos simples ligado estaticamente.
-Inclui versões simplificadas de comandos como ls, dd e gzip. O sash
+O Sash é um interpretador de comandos simples ligado estaticamente.
+Inclui versões simplificadas de comandos como ls, dd e gzip. O Sash
 pode ser útil em situações de recuperação do sistema.
 
 %description -l ru
