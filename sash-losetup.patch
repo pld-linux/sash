@@ -1,0 +1,124 @@
+--- sash-3.4/sash.c.oot	Mon Jan 10 10:42:05 2000
++++ sash-3.4/sash.c	Mon Jan 10 10:52:47 2000
+@@ -182,6 +182,12 @@
+ 	},
+ 
+ 	{
++		"-losetup",	do_losetup,	3,	3,
++		"Associate a loopback device with a file",
++		"[-d] device\n       -losetup device filename"
++	},
++
++	{
+ 		"-ln",		do_ln,		3,	INFINITE_ARGS,
+ 		"Link one fileName to another",
+ 		"[-s] srcName ... destName"
+--- sash-3.4/sash.h.oot	Mon Jan 10 10:45:13 2000
++++ sash-3.4/sash.h	Mon Jan 10 10:45:22 2000
+@@ -93,6 +93,7 @@
+ extern	void	do_find(int argc, const char ** argv);
+ extern	void	do_ed(int argc, const char ** argv);
+ extern	void	do_where(int argc, const char ** argv);
++extern	void	do_losetup(int argc, const char ** argv);
+ 
+ #ifdef	HAVE_GZIP
+ extern	void	do_gzip(int argc, const char ** argv);
+--- sash-3.4/cmds.c.oot	Mon Jan 10 10:45:30 2000
++++ sash-3.4/cmds.c	Mon Jan 10 10:51:10 2000
+@@ -17,6 +17,7 @@
+ #include <utime.h>
+ #include <errno.h>
+ 
++#include <linux/loop.h>
+ 
+ void
+ do_echo(int argc, const char ** argv)
+@@ -1152,6 +1153,60 @@
+ 
+ 	if (!found)
+ 		printf("Program \"%s\" not found in PATH\n", program);
++}
++
++void
++do_losetup(int argc, const char ** argv)
++{
++	int loopfd;
++	int targfd;
++	struct loop_info loopInfo;
++
++	if (!strcmp(argv[1], "-d")) {
++		loopfd = open(argv[2], O_RDONLY);
++		if (loopfd < 0) {
++			fprintf(stderr, "Error opening %s: %s\n", argv[2], 
++				strerror(errno));
++			return;
++		}
++
++		if (ioctl(loopfd, LOOP_CLR_FD, 0)) {
++			fprintf(stderr, "Error unassociating device: %s\n", 
++				strerror(errno));
++			return;
++		}
++	}
++
++	loopfd = open(argv[1], O_RDONLY);
++	if (loopfd < 0) {
++		fprintf(stderr, "Error opening %s: %s\n", argv[1], 
++			strerror(errno));
++		return;
++	}
++
++	targfd = open(argv[2], O_RDONLY);
++	if (targfd < 0) {
++		fprintf(stderr, "Error opening %s: %s\n", argv[2], 
++			strerror(errno));
++		return;
++	}
++
++	if (ioctl(loopfd, LOOP_SET_FD, targfd)) {
++		fprintf(stderr, "Error setting up loopback device: %s\n", 
++			strerror(errno));
++		return;
++	}
++
++	memset(&loopInfo, 0, sizeof(loopInfo));
++	strcpy(loopInfo.lo_name, argv[2]);
++
++	if (ioctl(loopfd, LOOP_SET_STATUS, &loopInfo)) {
++		fprintf(stderr, "Error setting up loopback device: %s\n", 
++			strerror(errno));
++		return;
++	}
++
++	return;
+ }
+ 
+ /* END CODE */
+--- sash-3.4/sash.1.oot	Mon Jan 10 10:54:37 2000
++++ sash-3.4/sash.1	Mon Jan 10 11:26:12 2000
+@@ -24,9 +24,9 @@
+ .nf
+      -ar, -chattr, -chgrp, -chmod, -chown, -cmp, -cp,
+      -dd, -echo, -ed, -grep, -file, -find, -gunzip,
+-     -gzip, -kill, -ln, -ls, -lsattr, -mkdir, -mknod,
+-     -more, -mount, -mv, -printenv, -pwd, -rm, -rmdir,
+-     -sum, -sync, -tar, -touch, -umount, -where
++     -gzip, -kill, -losetup, -ln, -ls, -lsattr, -mkdir,
++     -mknod, -more, -mount, -mv, -printenv, -pwd, -rm,
++     -rmdir, -sum, -sync, -tar, -touch, -umount, -where
+ .fi
+ .PP
+ These commands are generally similar to the standard programs with similar
+@@ -302,6 +302,12 @@
+ is a numeric value, or one of the special values HUP, INT,
+ QUIT, KILL, TERM, STOP, CONT, USR1 or USR2.
+ If no signal is specified then SIGTERM is used.
++.TP
++.B -losetup [-d] loopDev [file]
++Associates loopback devices with files on the system. If -d is not given,
++the loopback device \fBloopDev\fR is associated with \fBfile\fR. If -d is
++given, \fBloopDev\fR is unassociated with the file it's currently configured
++for.
+ .TP
+ .B -ln [-s] srcName ... destName
+ Links one or more files from the
