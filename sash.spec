@@ -1,12 +1,12 @@
-Summary: A statically linked shell, including some built-in basic commands.
-Name: sash
-Version: 2.1
-Release: 4
-Copyright: GPL
-Group: System Environment/Shells
-Source0: http://www.tip.net.au/~dbell/sash-2.1.tar.gz
-Patch0: sash-2.1-misc.patch
-Buildroot: /var/tmp/sash-root
+Summary:	A statically linked shell, including some built-in basic commands.
+Name:		sash
+Version:	2.1
+Release:	4
+Copyright:	GPL
+Group:		System Environment/Shells
+Source0:	http://www.tip.net.au/~dbell/%{name}-%{version}.tar.gz
+Patch0:		sash-2.1-misc.patch
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
 Sash is a simple, standalone, statically linked shell which includes
@@ -18,22 +18,23 @@ shared libraries.
 
 %prep
 %setup -q
-%patch0 -p1 -b ".misc"
+%patch0 -p1
 
 %build
 make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
-mkdir -p $RPM_BUILD_ROOT/sbin
-mkdir -p $RPM_BUILD_ROOT/usr/man/man8
+install -d $RPM_BUILD_ROOT{/sbin,%{_mandir}/man8}
 
-install -s -m755 sash $RPM_BUILD_ROOT/sbin
-install -m644 sash.1 $RPM_BUILD_ROOT/usr/man/man8/sash.8
+install -s sash $RPM_BUILD_ROOT/sbin
+install sash.1 $RPM_BUILD_ROOT%{_mandir}/man8/sash.8
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/sash.8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-/sbin/sash
-/usr/man/man8/sash.8
+%defattr(644,root,root,755)
+%attr(755,root,root) /sbin/sash
+%{_mandir}/man8/sash.8.gz
