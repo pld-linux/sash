@@ -9,7 +9,7 @@ Version:	3.6
 Release:	1
 License:	GPL
 Group:		Applications/Shells
-Source0:	http://www.tip.net.au/%7Edbell/programs/%{name}-%{version}.tar.gz
+Source0:	http://www.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-losetup.patch
 BuildRequires:	zlib-static >= 1.1.4
