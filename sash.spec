@@ -1,15 +1,17 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Summary(pl):	Statycznie linkowana powЁoka z wbudowanymi podstawowymi poleceniami
+Summary(ru): Статически собранный shell со встроенными базовыми командами
+Summary(uk): Статично з╕браний shell ╕з вбудованими базовими командами
 Name:		sash
-Version:	3.4
-Release:	13
+Version:	3.5
+Release:	1
 License:	GPL
 Group:		Applications/Shells
-Source0:	http://www.tip.net.au/~dbell/%{name}-%{version}.tar.gz
+Source0:	http://www.tip.net.au/%7Edbell/programs/%{name}-%{version}.tar.gz
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-scriptarg.patch
 Patch2:		%{name}-losetup.patch
-BuildRequires:	zlib-static
+BuildRequires:	zlib-static >= 1.1.4
 BuildRequires:	glibc-static
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,6 +33,19 @@ wspСЁdzielonych, co jest przydatne do ratowania systemu po awarii.
 Sash mo©e byФ tak©e u©ywany do bezpiecznego uaktualniania bibliotek
 dzielonych do nowszych wersji.
 
+%description -l ru
+Sash - это простой, статически собранный shell, включающий в себя
+упрощенные встроенные версии команд типа ls, dd и gzip. Независимость
+от динамических библиотек особенно полезна для "спасательных работ"
+после системных сбоев и для безопасного апгрейда системных динамических
+библиотек.
+
+%description -l uk
+Sash - це простий, статично з╕браний shell, що включа╓ вбудован╕ спрощен╕
+верс╕╖ таких команд як ls, dd та gzip. Незалежн╕сть в╕д динам╕чних
+б╕бл╕отек особливо корисна для "рятувальних роб╕т" п╕сля системних
+збо╖в та для безпечного апгрейду системних динам╕чних б╕бл╕отек.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -38,7 +53,7 @@ dzielonych do nowszych wersji.
 %patch2 -p1
 
 %build
-%{__make} COPT_FLAGS="%{rpmcflags}"
+%{__make} CC="%{__cc}" COPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
