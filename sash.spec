@@ -1,7 +1,8 @@
 Summary:	A statically linked shell, including some built-in basic commands
+Summary(pl):	Statycznie linkowana pow³oka z wbudowanymi podstawowymi poleceniami
 Name:		sash
 Version:	3.4
-Release:	12
+Release:	13
 License:	GPL
 Group:		Applications/Shells
 Group(de):	Applikationen/Shells
@@ -23,6 +24,14 @@ statically linked so that it can work without shared libraries, so it
 is particularly useful for recovering from certain types of system
 failures. Sash can also be used to safely upgrade to new versions of
 shared libraries.
+
+%description -l pl
+Sash jest prost±, samodzieln±, statycznie linkowan± pow³ok±, która
+ma wbudowane uproszczone wersje poleceñ takich jak ls, dd czy gzip.
+Sash jest statycznie zlinkowany, wiêc mo¿e pracowaæ bez bibliotek
+wspó³dzielonych, co jest przydatne do ratowania systemu po awarii.
+Sash mo¿e byæ tak¿e u¿ywany do bezpiecznego uaktualniania bibliotek
+dzielonych do nowszych wersji.
 
 %prep
 %setup -q

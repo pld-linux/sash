@@ -25,10 +25,11 @@
  extern	void	do_gzip(int argc, const char ** argv);
 --- sash-3.4/cmds.c.oot	Mon Jan 10 10:45:30 2000
 +++ sash-3.4/cmds.c	Mon Jan 10 10:51:10 2000
-@@ -17,6 +17,7 @@
+@@ -17,6 +17,8 @@
  #include <utime.h>
  #include <errno.h>
  
++#define dev_t dev_t
 +#include <linux/loop.h>
  
  void
