@@ -5,8 +5,6 @@ Version:	3.4
 Release:	13
 License:	GPL
 Group:		Applications/Shells
-Group(de):	Applikationen/Shells
-Group(pl):	Aplikacje/Pow³oki
 Source0:	http://www.tip.net.au/~dbell/%{name}-%{version}.tar.gz
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-scriptarg.patch
