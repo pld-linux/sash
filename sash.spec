@@ -1,7 +1,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.4
-Release:	11
+Release:	12
 License:	GPL
 Group:		Applications/Shells
 Group(de):	Applikationen/Shells
