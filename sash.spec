@@ -6,7 +6,7 @@ Summary(ru):	Статически собранный shell со встроенными базовыми командами
 Summary(uk):	Статично з╕браний shell ╕з вбудованими базовими командами
 Name:		sash
 Version:	3.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Shells
 Source0:	http://www.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
