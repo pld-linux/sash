@@ -29,7 +29,7 @@ Sash can also be used to safely upgrade to new versions of shared libraries.
 %patch2 -p1
 
 %build
-make COPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} COPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
