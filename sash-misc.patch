@@ -1,21 +1,11 @@
---- sash-3.3/Makefile.misc	Sun Apr 18 10:18:46 1999
-+++ sash-3.3/Makefile	Mon Aug  2 11:12:31 1999
-@@ -5,7 +5,7 @@
- # The HAVE_EXT2 definition adds the -chattr and -lsattr comamnds.
- #
+--- sash-3.5/Makefile.orig	Fri Mar  8 12:29:53 2002
++++ sash-3.5/Makefile	Wed Mar 20 01:56:46 2002
+@@ -11,7 +11,7 @@
+ HAVE_LINUX_MOUNT	= 1
+ MOUNT_TYPE		= '"ext3"'
  
--CFLAGS = -O3 -Wall -Wmissing-prototypes -DHAVE_GZIP -DHAVE_EXT2
-+CFLAGS = $(COPT_FLAGS) -Wall -Wmissing-prototypes -DHAVE_GZIP -DHAVE_EXT2
- LDFLAGS = -static -s
- LIBS = -lz
- 
---- sash-3.3/cmds.c.misc	Thu Jun  3 17:42:39 1999
-+++ sash-3.3/cmds.c	Mon Aug  2 11:09:58 1999
-@@ -16,7 +16,6 @@
- #include <grp.h>
- #include <utime.h>
- #include <errno.h>
--#include <linux/fs.h>
- 
- 
- void
+-CFLAGS = -O3 -Wall -Wmissing-prototypes \
++CFLAGS = $(COPT_FLAGS) -Wall -Wmissing-prototypes \
+ 	-DHAVE_GZIP=$(HAVE_GZIP) \
+ 	-DHAVE_LINUX_ATTR=$(HAVE_LINUX_ATTR) \
+ 	-DHAVE_LINUX_MOUNT=$(HAVE_LINUX_MOUNT) \
