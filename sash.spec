@@ -11,7 +11,7 @@ Patch1:		sash-scriptarg.patch
 Patch2:		sash-losetup.patch
 BuildRequires:	zlib-static
 BuildRequires:	glibc-static
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
 
