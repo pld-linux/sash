@@ -24,9 +24,9 @@ failures. Sash can also be used to safely upgrade to new versions of
 shared libraries.
 
 %description -l pl
-Sash jest prost±, samodzieln±, statycznie linkowan± pow³ok±, która
-ma wbudowane uproszczone wersje poleceñ takich jak ls, dd czy gzip.
-Sash jest statycznie zlinkowany, wiêc mo¿e pracowaæ bez bibliotek
+Sash jest prost±, samodzieln±, statycznie linkowan± pow³ok±, która ma
+wbudowane uproszczone wersje poleceñ takich jak ls, dd czy gzip. Sash
+jest statycznie zlinkowany, wiêc mo¿e pracowaæ bez bibliotek
 wspó³dzielonych, co jest przydatne do ratowania systemu po awarii.
 Sash mo¿e byæ tak¿e u¿ywany do bezpiecznego uaktualniania bibliotek
 dzielonych do nowszych wersji.
