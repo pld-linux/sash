@@ -10,6 +10,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Shells
 Source0:	http://www.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
+# Source0-md5:	56dd73d91374e1f0c59b9860b2855119
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-losetup.patch
 BuildRequires:	zlib-static >= 1.1.4
