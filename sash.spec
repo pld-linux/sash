@@ -6,15 +6,15 @@ Summary(ru):	Статически собранный shell со встроенными базовыми командами
 Summary(uk):	Статично з╕браний shell ╕з вбудованими базовими командами
 Name:		sash
 Version:	3.6
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Shells
 Source0:	http://www.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
 # Source0-md5:	56dd73d91374e1f0c59b9860b2855119
 Patch0:		%{name}-misc.patch
 Patch1:		%{name}-losetup.patch
-BuildRequires:	zlib-static >= 1.1.4
 BuildRequires:	glibc-static
+BuildRequires:	zlib-static >= 1.1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
@@ -70,15 +70,17 @@ Sash - це простий, статично з╕браний shell, що включа╓ вбудован╕
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man8}
 
 install sash $RPM_BUILD_ROOT%{_sbindir}
 install sash.1 $RPM_BUILD_ROOT%{_mandir}/man8/sash.8
+ln -s %{_sbindir}/sash %{_bindir}/sash
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/sash
 %attr(755,root,root) %{_sbindir}/sash
 %{_mandir}/man8/*
