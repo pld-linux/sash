@@ -18,6 +18,7 @@ BuildRequires:	zlib-static >= 1.1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
+%define		_sbindir	/sbin
 
 %description
 Sash is a simple, standalone, statically linked shell which includes
@@ -66,7 +67,9 @@ Sash - це простий, статично з╕браний shell, що включа╓ вбудован╕
 %patch1 -p1
 
 %build
-%{__make} CC="%{__cc}" COPT_FLAGS="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" \
+	COPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
