@@ -74,7 +74,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man8}
 
 install sash $RPM_BUILD_ROOT%{_sbindir}
 install sash.1 $RPM_BUILD_ROOT%{_mandir}/man8/sash.8
-ln -s %{_sbindir}/sash %{_bindir}/sash
+ln -sf %{_sbindir}/sash $RPM_BUILD_ROOT%{_bindir}/sash
 
 %clean
 rm -rf $RPM_BUILD_ROOT
