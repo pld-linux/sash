@@ -1,9 +1,9 @@
 Summary:	A statically linked shell, including some built-in basic commands
-Summary(es.UTF-8):   Interpretador de Comandos conectado estáticamente con algunos comandos básicos
-Summary(pl.UTF-8):   Skonsolidowana statycznie powłoka z wbudowanymi podstawowymi poleceniami
-Summary(pt_BR.UTF-8):   nterpretador de Comandos ligado estaticamente com alguns comandos básicos
-Summary(ru.UTF-8):   Статически собранный shell со встроенными базовыми командами
-Summary(uk.UTF-8):   Статично зібраний shell із вбудованими базовими командами
+Summary(es.UTF-8):	Interpretador de Comandos conectado estáticamente con algunos comandos básicos
+Summary(pl.UTF-8):	Skonsolidowana statycznie powłoka z wbudowanymi podstawowymi poleceniami
+Summary(pt_BR.UTF-8):	nterpretador de Comandos ligado estaticamente com alguns comandos básicos
+Summary(ru.UTF-8):	Статически собранный shell со встроенными базовыми командами
+Summary(uk.UTF-8):	Статично зібраний shell із вбудованими базовими командами
 Name:		sash
 Version:	3.7
 Release:	1
