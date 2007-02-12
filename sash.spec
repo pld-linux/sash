@@ -1,9 +1,9 @@
 Summary:	A statically linked shell, including some built-in basic commands
-Summary(es):	Interpretador de Comandos conectado estАticamente con algunos comandos bАsicos
-Summary(pl):	Skonsolidowana statycznie powЁoka z wbudowanymi podstawowymi poleceniami
-Summary(pt_BR):	nterpretador de Comandos ligado estaticamente com alguns comandos bАsicos
-Summary(ru):	Статически собранный shell со встроенными базовыми командами
-Summary(uk):	Статично з╕браний shell ╕з вбудованими базовими командами
+Summary(es.UTF-8):   Interpretador de Comandos conectado estц║ticamente con algunos comandos bц║sicos
+Summary(pl.UTF-8):   Skonsolidowana statycznie powе┌oka z wbudowanymi podstawowymi poleceniami
+Summary(pt_BR.UTF-8):   nterpretador de Comandos ligado estaticamente com alguns comandos bц║sicos
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦ я│п╬п╠я─п╟п╫п╫я▀п╧ shell я│п╬ п╡я│я┌я─п╬п╣п╫п╫я▀п╪п╦ п╠п╟п╥п╬п╡я▀п╪п╦ п╨п╬п╪п╟п╫п╢п╟п╪п╦
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫п╬ п╥я√п╠я─п╟п╫п╦п╧ shell я√п╥ п╡п╠я┐п╢п╬п╡п╟п╫п╦п╪п╦ п╠п╟п╥п╬п╡п╦п╪п╦ п╨п╬п╪п╟п╫п╢п╟п╪п╦
 Name:		sash
 Version:	3.7
 Release:	1
@@ -28,38 +28,38 @@ is particularly useful for recovering from certain types of system
 failures. Sash can also be used to safely upgrade to new versions of
 shared libraries.
 
-%description -l es
+%description -l es.UTF-8
 Sash es un interpretador de comandos sencillos encendido
-estАticamente. Incluye versiones simplificadas de comandos como ls, dd
-y gzip. Sash puede ser Зtil en situaciones de recuperaciСn del
+estц║ticamente. Incluye versiones simplificadas de comandos como ls, dd
+y gzip. Sash puede ser ц╨til en situaciones de recuperaciцЁn del
 sistema.
 
-%description -l pl
-Sash jest prost╠, samodzieln╠, skonsolidowan╠ statycznie powЁok╠,
-ktСra ma wbudowane uproszczone wersje poleceЯ takich jak ls, dd czy
-gzip. Ze wzglЙdu na statyczn╠ konsolidacjЙ Sash mo©e pracowaФ bez
-bibliotek wspСЁdzielonych, co jest przydatne do ratowania systemu po
-awarii. Sash mo©e byФ tak©e u©ywany do bezpiecznego uaktualniania
+%description -l pl.UTF-8
+Sash jest prostд┘, samodzielnд┘, skonsolidowanд┘ statycznie powе┌okд┘,
+ktцЁra ma wbudowane uproszczone wersje poleceе└ takich jak ls, dd czy
+gzip. Ze wzglд≥du na statycznд┘ konsolidacjд≥ Sash moе╪e pracowaд┤ bez
+bibliotek wspцЁе┌dzielonych, co jest przydatne do ratowania systemu po
+awarii. Sash moе╪e byд┤ takе╪e uе╪ywany do bezpiecznego uaktualniania
 bibliotek dzielonych do nowszych wersji.
 
-%description -l pt_BR
-O Sash И um interpretador de comandos simples ligado estaticamente.
-Inclui versУes simplificadas de comandos como ls, dd e gzip. O Sash
-pode ser Зtil em situaГУes de recuperaГЦo do sistema.
+%description -l pt_BR.UTF-8
+O Sash ц╘ um interpretador de comandos simples ligado estaticamente.
+Inclui versц╣es simplificadas de comandos como ls, dd e gzip. O Sash
+pode ser ц╨til em situaц╖ц╣es de recuperaц╖цёo do sistema.
 
-%description -l ru
-Sash - это простой, статически собранный shell, включающий в себя
-упрощенные встроенные версии команд типа ls, dd и gzip. Независимость
-от динамических библиотек особенно полезна для "спасательных работ"
-после системных сбоев и для безопасного апгрейда системных
-динамических библиотек.
+%description -l ru.UTF-8
+Sash - я█я┌п╬ п©я─п╬я│я┌п╬п╧, я│я┌п╟я┌п╦я┤п╣я│п╨п╦ я│п╬п╠я─п╟п╫п╫я▀п╧ shell, п╡п╨п╩я▌я┤п╟я▌я┴п╦п╧ п╡ я│п╣п╠я▐
+я┐п©я─п╬я┴п╣п╫п╫я▀п╣ п╡я│я┌я─п╬п╣п╫п╫я▀п╣ п╡п╣я─я│п╦п╦ п╨п╬п╪п╟п╫п╢ я┌п╦п©п╟ ls, dd п╦ gzip. п²п╣п╥п╟п╡п╦я│п╦п╪п╬я│я┌я▄
+п╬я┌ п╢п╦п╫п╟п╪п╦я┤п╣я│п╨п╦я┘ п╠п╦п╠п╩п╦п╬я┌п╣п╨ п╬я│п╬п╠п╣п╫п╫п╬ п©п╬п╩п╣п╥п╫п╟ п╢п╩я▐ "я│п©п╟я│п╟я┌п╣п╩я▄п╫я▀я┘ я─п╟п╠п╬я┌"
+п©п╬я│п╩п╣ я│п╦я│я┌п╣п╪п╫я▀я┘ я│п╠п╬п╣п╡ п╦ п╢п╩я▐ п╠п╣п╥п╬п©п╟я│п╫п╬пЁп╬ п╟п©пЁя─п╣п╧п╢п╟ я│п╦я│я┌п╣п╪п╫я▀я┘
+п╢п╦п╫п╟п╪п╦я┤п╣я│п╨п╦я┘ п╠п╦п╠п╩п╦п╬я┌п╣п╨.
 
-%description -l uk
-Sash - це простий, статично з╕браний shell, що включа╓ вбудован╕
-спрощен╕ верс╕╖ таких команд як ls, dd та gzip. Незалежн╕сть в╕д
-динам╕чних б╕бл╕отек особливо корисна для "рятувальних роб╕т" п╕сля
-системних збо╖в та для безпечного апгрейду системних динам╕чних
-б╕бл╕отек.
+%description -l uk.UTF-8
+Sash - я├п╣ п©я─п╬я│я┌п╦п╧, я│я┌п╟я┌п╦я┤п╫п╬ п╥я√п╠я─п╟п╫п╦п╧ shell, я┴п╬ п╡п╨п╩я▌я┤п╟я■ п╡п╠я┐п╢п╬п╡п╟п╫я√
+я│п©я─п╬я┴п╣п╫я√ п╡п╣я─я│я√я≈ я┌п╟п╨п╦я┘ п╨п╬п╪п╟п╫п╢ я▐п╨ ls, dd я┌п╟ gzip. п²п╣п╥п╟п╩п╣п╤п╫я√я│я┌я▄ п╡я√п╢
+п╢п╦п╫п╟п╪я√я┤п╫п╦я┘ п╠я√п╠п╩я√п╬я┌п╣п╨ п╬я│п╬п╠п╩п╦п╡п╬ п╨п╬я─п╦я│п╫п╟ п╢п╩я▐ "я─я▐я┌я┐п╡п╟п╩я▄п╫п╦я┘ я─п╬п╠я√я┌" п©я√я│п╩я▐
+я│п╦я│я┌п╣п╪п╫п╦я┘ п╥п╠п╬я≈п╡ я┌п╟ п╢п╩я▐ п╠п╣п╥п©п╣я┤п╫п╬пЁп╬ п╟п©пЁя─п╣п╧п╢я┐ я│п╦я│я┌п╣п╪п╫п╦я┘ п╢п╦п╫п╟п╪я√я┤п╫п╦я┘
+п╠я√п╠п╩я√п╬я┌п╣п╨.
 
 %prep
 %setup -q
