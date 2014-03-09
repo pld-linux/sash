@@ -5,14 +5,12 @@ Summary(pt_BR.UTF-8):	nterpretador de Comandos ligado estaticamente com alguns c
 Summary(ru.UTF-8):	Статически собранный shell со встроенными базовыми командами
 Summary(uk.UTF-8):	Статично зібраний shell із вбудованими базовими командами
 Name:		sash
-Version:	3.7
+Version:	3.8
 Release:	1
 License:	GPL
 Group:		Applications/Shells
-Source0:	http://www.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
-# Source0-md5:	ee7c7ed5aad76599974d016a6f201ef4
-Patch0:		%{name}-misc.patch
-Patch1:		%{name}-losetup.patch
+Source0:	http://members.tip.net.au/~dbell/programs/%{name}-%{version}.tar.gz
+# Source0-md5:	105faad43be231dd9f439e96c70d76aa
 BuildRequires:	glibc-static
 BuildRequires:	zlib-static >= 1.1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,13 +61,11 @@ Sash - це простий, статично зібраний shell, що вкл
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	COPT_FLAGS="%{rpmcflags}"
+	OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -86,4 +82,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/sash
 %attr(755,root,root) %{_sbindir}/sash
-%{_mandir}/man8/*
+%{_mandir}/man8/sash.8*
